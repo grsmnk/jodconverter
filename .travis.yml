@@ -6,7 +6,7 @@ deploy:
   provider: script
   script:
     - sed -i .bak "s:<groupId>org.artofsolving.jodconverter</groupId>$:<groupId>kirasystems</groupId>:g" pom.xml
-    - export VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version|grep -Ev '(^\[|Download\w+:)')
+    - export VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -v '^[\[|Download]')
     - mvn package -Dmaven.test.skip=true
     - lein deploy clojars kirasystems/jodconverter-core $VERSION target/jodconverter-core-$VERSION.jar pom.xml
   on:
