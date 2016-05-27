@@ -8,7 +8,8 @@ deploy:
     sed -i "s:<groupId>org.artofsolving.jodconverter</groupId>$:<groupId>kirasystems</groupId>:g" pom.xml;
     mvn package -Dmaven.test.skip=true;
     export VERSION=$(ls target | sed -n 's/jodconverter-core-\(.*\).jar/\1/p');
-    echo Deploying kirasystems/jodconverter-core $VERSION;
+    echo Deploying kirasystems/jodconverter-core $(ls target | sed -n 's/jodconverter-core-\(.*\).jar/\1/p');
+    VERSION=$(ls target | sed -n 's/jodconverter-core-\(.*\).jar/\1/p')
     lein deploy releases kirasystems/jodconverter-core $VERSION target/jodconverter-core-$VERSION.jar pom.xml;
   on:
     tags: true
