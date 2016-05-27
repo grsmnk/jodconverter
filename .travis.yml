@@ -7,7 +7,7 @@ deploy:
   script: >
     sed -i "s:<groupId>org.artofsolving.jodconverter</groupId>$:<groupId>kirasystems</groupId>:g" pom.xml;
     mvn package -Dmaven.test.skip=true;
-    export VERSION=$(mvn org.apache.maven.plugins:maven-help-plugin:2.1.1:evaluate -Dexpression=project.version | grep -v '[\[|Download]');
+    export VERSION=$(ls target | sed -n 's/jodconverter-core-\(.*\).jar/\1/p');
     echo Deploying kirasystems/jodconverter-core $VERSION;
     lein deploy releases kirasystems/jodconverter-core $VERSION target/jodconverter-core-$VERSION.jar pom.xml;
   on:
