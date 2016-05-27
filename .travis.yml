@@ -9,8 +9,7 @@ deploy:
     mvn package -Dmaven.test.skip=true;
     export VERSION=$(ls target | sed -n 's/jodconverter-core-\(.*\).jar/\1/p');
     echo Deploying kirasystems/jodconverter-core $(ls target | sed -n 's/jodconverter-core-\(.*\).jar/\1/p');
-    echo $(pwd)
-    echo $(ls target)
+    ls target | sed -n 's/jodconverter-core-\(.*\).jar/\1/p';
     VERSION=$(ls target | sed -n 's/jodconverter-core-\(.*\).jar/\1/p')
     lein deploy releases kirasystems/jodconverter-core $VERSION target/jodconverter-core-$VERSION.jar pom.xml;
   on:
