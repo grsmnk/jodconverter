@@ -1,0 +1,16 @@
+language: java
+before_install: cd jodconverter-core
+script: echo Skipping Tests
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: sh ../deploy.sh
+  on:
+    tags: true
+notifications:
+  slack:
+    secure: BMP6kcVFT+TfOadH1nlUfwdON1q5aUt8w+Zl0MJooBrCmAhjiSxqeVxVmQemF2bqFcyT6RZ2cec7QinDS3qSjIZsearcyf11NvDzYs7M/i0qUH9Hj8RXUAOL7H7ypY2pP8zVRiW12aBkdSzijAX+sKaESvT7zwfMIeHGlfqQKvc=
+env:
+  global:
+  - secure: Wv33so+4o+4yiF/NCDErgieM/ue+A4y9Tz+ZXpsJvxYLZnapU1xU3myebZ5acxO3labQ0Xbo72q4ix8JN+7apbQrlkaNMNGCLeBReaeXRCE1OeLanIvA3Q2L+pcwqo7jk4Yvb1wMnKTGkPKzGc3D/9jV+CT4Fdztc2fx45NAQ0U=
+  - secure: abt88UK/IYVQ/MsVqLNjoaoI6I3YKHYnSYWWBVuQk2i80zgA83hcnbu5feiE6fUeEY9Nwb7R3k8rrNSSRAje+RDgxxZTOUHrtZcPZU/nJjQRldIOq09Nfj/aBRzV7VnykQ/Hiu+GSnFLb6GmNFd3oWw9X/qecZmrKl4VijARMRc=
