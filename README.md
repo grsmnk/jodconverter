@@ -1,5 +1,6 @@
 JODConverter
 ============
+[![Build Status](https://travis-ci.org/kirasystems/jodconverter.svg)](https://travis-ci.org/kirasystems/jodconverter)
 
 JODConverter (for Java OpenDocument Converter) automates document conversions
 using LibreOffice or OpenOffice.org.
@@ -10,3 +11,4 @@ the code here at GitHub in the hope that a well-maintained fork will emerge.
 See the [Google Code](http://code.google.com/p/jodconverter/) project for more
 info.
 
+[![Clojars Project](http://clojars.org/kirasystems/jodconverter-core/latest-version.svg)](http://clojars.org/kirasystems/jodconverter-core)
